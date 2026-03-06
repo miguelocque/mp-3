@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledHeading = styled.header`
-    background-color: #EBF4F6;
-    color: black;
+    background-color: #09637E;
+    color: #1A1A1A;
     padding: 3%;
     text-align: left;
     

@@ -53,19 +53,19 @@ export default function Nav() {
                     <StyledLink to="/">Home</StyledLink>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledLink to="projects.html">Projects</StyledLink>
+                    <StyledLink to="/projects.html">Projects</StyledLink>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledLink to="education.html">Education</StyledLink>
+                    <StyledLink to="/education.html">Education</StyledLink>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledLink to="experience.html">Experience</StyledLink>
+                    <StyledLink to="/experience.html">Experience</StyledLink>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledLink to="skills.html">Technical Skills</StyledLink>
+                    <StyledLink to="/skills.html">Technical Skills</StyledLink>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledLink to="achievements.html">Achievements</StyledLink>
+                    <StyledLink to="/achievements.html">Achievements</StyledLink>
                 </StyledListItem>
             </StyledList>
         </StyledNav>
