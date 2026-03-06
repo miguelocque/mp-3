@@ -1,8 +1,181 @@
 import {Link} from "react-router";
 import {useState} from "react";
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+    width: 70%;
+    text-align: center;
+    font-size: calc(2px + 1.5vw);
+    padding: 3%;
+    background-color: #EBF4F6;
+    height: auto;
+    
+    h1 {
+        font-size: calc(8px + 2vw);
+        color: #09637E;
+        border-bottom: 3px solid #088395;
+        padding-bottom: 1%;
+    }
+    
+    h3 {
+        font-size: calc(6px + 1.2vw);
+        color: #09637E;
+        margin-top: 4%;
+    }
+    
+    h5 {
+        font-size(2px + 0.8vw);
+        margin-top: 1%;
+    }
+    
+    p {
+        font-size: calc(2px + 1.5vw);
+        padding: 0 4%;
+        color: #1A1A1A;
+    }
+    
+    img {
+        max-width: 75%;
+        margin: 2% auto;
+        display: block;
+        padding: 2%;
+        border: 4px solid #7AB2B2;
+        border-radius: 8px;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+`;
+
+const StyledBullets = styled.nav`
+    width: 100%;
+    background-color: #7AB2B2;
+    border-radius: 6px;
+    padding: 2%;
+
+    ul {
+        list-style: circle;
+        padding: 0 5%;
+        text-align: left;
+        margin: 0;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+
+    li {
+        padding: 1.5% 0;
+        font-size: calc(2px + 1.3vw);
+        color: #1a1a1a;
+        border: none;
+
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+            width: 100%;
+            margin: 2% 0;
+        }
+    }
+`;
 
 
+const StyledCalculator = styled.div`
+    max-width: 40vw;
+    margin: 2% auto;
+    padding: 3%;
+    background-color: #EBF4F6;
+    border: 5px solid #088395;
+    border-radius: 10px;
 
+    @media screen and (max-width: 1000px) {
+        max-width: 90vw;
+        padding: 2%;
+    }
+`;
+
+const StyledCalcInputs = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+
+    label {
+        font-size: calc(4px + 1.2vw);
+        font-weight: bold;
+        color: #09637E;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+
+    input {
+        padding: 2%;
+        font-size: calc(4px + 1.2vw);
+        border: 3px solid #7AB2B2;
+        width: 100%;
+        background-color: white;
+        margin-bottom: 2%;
+    }
+`;
+
+const StyledCalcButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+
+    button {
+        width: 30%;
+        margin: 1%;
+        padding: 4%;
+        font-size: calc(4px + 1.5vw);
+        background-color: #09637E;
+        color: #EBF4F6;
+        border: 3px solid #088395;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: #088395;
+        }
+
+        &:last-child {
+            background-color: #7AB2B2;
+            color: #1a1a1a;
+            width: 96%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+            margin: 2% 0;
+            padding: 3%;
+            font-size: calc(6px + 2vw);
+        }
+    }
+`;
+
+// the <{$negative : boolean}> allows us to change the color using a prop
+const StyledCalcOutput = styled.div<{$negative : boolean}>`
+    margin-top: 2%;
+
+    h3 {
+        text-align: center;
+        padding: 3%;
+        min-height: 8vh;
+        font-size: calc(6px + 2vw);
+        color: ${({ $negative}) => ($negative ? "red" : "#09637E")};
+        margin: 0;
+        border-top: 2px solid #7AB2B2;
+
+        @media screen and (max-width: 1000px) {
+            font-size: calc(8px + 2.5vw);
+            min-height: 10vh;
+        }
+    }
+`;
 
 export default function Projects() {
     const [input1, setInput1] = useState("");
@@ -36,17 +209,17 @@ export default function Projects() {
     }
 
     return (
-        <main id="projects-main">
+        <StyledMain>
             <h1>Projects</h1>
 
-            <h3 id="passwordManager">Password Manager</h3>
+            <h3>Password Manager</h3>
             <h5><Link to="https://github.com/miguelocque/Password-Manager">Github Link</Link></h5>
             <p>My Password Manager project was an ambitious project that I took upon myself with the idea
                 that sometimes, people have more than one potential password for a given account. Thus, I
                 created a CLI password manager with AES-128 encryption and SHA-256 authentication to learn a little
                 more about security measures. It utilizes a custom hash table implementation with secure file
                 storage and PIN protection. Here are some technical details:</p>
-            <nav id="nav-password-manager">
+            <StyledBullets>
                 <ul>
                     <li>Engineered a CLI password manager with AES-128 encryption and SHA-256 hashing for secure
                         authentication and credential storage, achieving zero plaintext exposure through 50+ simulated
@@ -58,15 +231,15 @@ export default function Projects() {
                     </li>
 
                 </ul>
-            </nav>
+            </StyledBullets>
 
-            <h3 id="patientManager">Unified Patient Manager</h3>
+            <h3>Unified Patient Manager</h3>
             <h5><Link to="https://github.com/rajanbilancooper/egesCS411Team">Github Link</Link></h5>
             <p>A group project that I aided in designing and managing, the Unified Patient Manager is
                 a secure Electronic Health Records (EHR) system built with Spring Boot featuring
                 patient management, prescription tracking with conflict detection, and two-factor authentication.
                 Here are some technical details:</p>
-            <nav id="nav-upm">
+            <StyledBullets>
                 <ul>
                     <li>Designed and developed a full-stack healthcare management system serving 4 user workflows with
                         60+
@@ -86,13 +259,13 @@ export default function Projects() {
                         services, repositories, and DTOs.
                     </li>
                 </ul>
-            </nav>
+            </StyledBullets>
             <img src="../../../public/UPMLogin.png" alt="Unified Patient Manager's Login page"/>
             <img src="../../../public/UPMRegistration.png" alt="Unified Patient Manager's Registration Page"/>
             <img src="../../../public/UPMDash.png" alt="Unified Patient Manager's Dashboard Page"/>
 
 
-            <h3 id="petTrackr">PetTrackr</h3>
+            <h3>PetTrackr</h3>
             <h5><Link to="https://github.com/miguelocque/PetTrackr">Github Link</Link></h5>
             <p>
                 PetTrackr was an individual project that derived inspiration from the Patient Manager. I wanted
@@ -103,7 +276,7 @@ export default function Projects() {
                 Built with Spring Boot and React to demonstrate modern web development practices with emphasis
                 on file handling and QR code generation. Here are more technical details:
             </p>
-            <nav id="nav-petTrackr">
+            <StyledBullets>
                 <ul>
                     <li>Engineered full-stack pet management application using Java Spring Boot and React, implementing
                         end-to-end customer workflows including profile management, QR-Code based lost pet recovery
@@ -118,7 +291,7 @@ export default function Projects() {
                         operations.
                     </li>
                 </ul>
-            </nav>
+            </StyledBullets>
 
             <img src="../../../public/LoginPage.png" alt="PetTrackr's Login Page"/>
             <img src="../../../public/PetDashboard.png" alt="PetTrackr's Dashboard Page"/>
@@ -127,8 +300,8 @@ export default function Projects() {
 
 
             <h3>JavaScript Calculator</h3>
-            <div className="calculator">
-                <div id="calculator-inputs">
+            <StyledCalculator>
+                <StyledCalcInputs>
 
                     {/*input for the first number in JS calculator*/}
                     <label htmlFor="first-number">First Number: </label>
@@ -146,21 +319,23 @@ export default function Projects() {
                         placeholder={`Enter a Number`}
                         onChange={(e) => setInput2(e.target.value)}
                     />
-                </div>
+                </StyledCalcInputs>
 
-                <div id="calculator-buttons">
+                <StyledCalcButtons>
                     <button onClick={doAdd}>+</button>
                     <button onClick={doSubtract}>-</button>
                     <button onClick={doMultiply}> *</button>
                     <button onClick={doDivide}>/</button>
                     <button onClick={doPower}>**</button>
                     <button onClick={clear}>CLEAR</button>
-                </div>
-                <div id="calculator-output">
-                    <h3 id="output">{output}</h3>
-                </div>
-            </div>
+                </StyledCalcButtons>
 
-        </main>
+                {/* using interpolation/props to denote the color of the output */}
+                <StyledCalcOutput $negative={output < 0}>
+                    <h3>{output}</h3>
+                </StyledCalcOutput>
+            </StyledCalculator>
+
+        </StyledMain>
     );
 }
