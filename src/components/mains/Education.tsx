@@ -78,7 +78,7 @@ export default function Education() {
         <StyledMain>
             <h1>Education</h1>
             <h4>Bachelor of Arts from Boston University, Cumulative GPA of 3.57</h4>
-            <img src="../../../public/BULogo.png" alt="BU Logo"/>
+            <img src="/BULogo.png" alt="BU Logo"/>
             <p>Relevant Coursework:</p>
             <StyledCourseList>
                 <ul>

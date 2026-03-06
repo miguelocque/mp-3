@@ -260,9 +260,9 @@ export default function Projects() {
                     </li>
                 </ul>
             </StyledBullets>
-            <img src="../../../public/UPMLogin.png" alt="Unified Patient Manager's Login page"/>
-            <img src="../../../public/UPMRegistration.png" alt="Unified Patient Manager's Registration Page"/>
-            <img src="../../../public/UPMDash.png" alt="Unified Patient Manager's Dashboard Page"/>
+            <img src="/UPMLogin.png" alt="Unified Patient Manager's Login page"/>
+            <img src="/UPMRegistration.png" alt="Unified Patient Manager's Registration Page"/>
+            <img src="/UPMDash.png" alt="Unified Patient Manager's Dashboard Page"/>
 
 
             <h3>PetTrackr</h3>
@@ -293,9 +293,9 @@ export default function Projects() {
                 </ul>
             </StyledBullets>
 
-            <img src="../../../public/LoginPage.png" alt="PetTrackr's Login Page"/>
-            <img src="../../../public/PetDashboard.png" alt="PetTrackr's Dashboard Page"/>
-            <img src="../../../public/QRCodeLostPet.png" alt="PetTrackr's QR Code Emergency Page"/>
+            <img src="/LoginPage.png" alt="PetTrackr's Login Page"/>
+            <img src="/PetDashboard.png" alt="PetTrackr's Dashboard Page"/>
+            <img src="/QRCodeLostPet.png" alt="PetTrackr's QR Code Emergency Page"/>
 
 
 
